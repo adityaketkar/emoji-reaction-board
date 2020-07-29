@@ -36,3 +36,102 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  height: 600px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  font-size: 20px;
+  background: #1e1f20;
+  color: #eee;
+} */
+
+h1 {
+  font-weight: 400;
+}
+
+button {
+  padding: 8px 16px;
+  background: crimson;
+  color: white;
+  border: none;
+  font-size: inherit;
+  margin: 10px;
+}
+
+.animation { 
+  display: block;
+  border: 1px solid black;
+  width:50%;
+  min-height:100px;
+  margin:auto;
+  margin-top:10px;
+}
+
+.section{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.section-container{
+  margin: 20px;
+  border: black 1px solid;
+  padding: 10px;
+}
+
+.reaction-board{
+  /* left: 10px; */
+  width: 70%;
+  /* border: black 1px solid; */
+}
+
+.master-container{
+  width: auto;
+  /* border: black 1px solid; */
+}
+
+.analytics-board{
+    /* border: black 1px solid; */
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.class-mood{
+  /* border: green 2px solid; */
+  margin: 5px;
+  justify-items: center;
+}
+
+.class-responses{
+  /* border: blue 2px solid; */
+  margin: 5px;
+}
