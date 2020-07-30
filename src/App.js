@@ -202,6 +202,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 NOT UNDERSTOOD
+                <h2> Peter </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -212,6 +213,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Bruce </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -222,6 +224,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 NOT UNDERSTOOD
+                <h2> Tony </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -232,6 +235,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Clint </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -242,6 +246,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 NOT UNDERSTOOD
+                <h2> Strange </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -252,6 +257,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 NOT UNDERSTOOD
+                <h2> Odinson </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -262,6 +268,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Rogers </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -272,6 +279,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 NOT UNDERSTOOD
+                <h2> Wanda </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -282,6 +290,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> T'Challa </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -292,6 +301,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Natasha </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -302,6 +312,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Rhodey </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
@@ -312,6 +323,7 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 DOUBT
+                <h2> Scott </h2>
               </div>
             </div> 
           </div>
