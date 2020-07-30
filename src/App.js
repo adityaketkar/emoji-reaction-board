@@ -96,7 +96,10 @@ class App extends React.PureComponent {
           name: 'Doubts', uv: 12, pv: 12, StudentStatus: 5,
         },
         {
-          name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 2,
+          name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 1,
+        },
+        {
+          name: 'Default', uv: 12, pv: 12, StudentStatus: 1,
         }
       ].reverse()
     };
@@ -146,7 +149,10 @@ class App extends React.PureComponent {
         name: 'Doubts', uv: 12, pv: 12, StudentStatus: 10-seed,
       },
       {
-        name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 2,
+        name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 1,
+      },
+      {
+        name: 'Default', uv: 12, pv: 12, StudentStatus: 1,
       }
     ].reverse();
     this.setState({
@@ -370,12 +376,20 @@ class App extends React.PureComponent {
           <MyWindowPortal closeWindowPortal={this.closeWindowPortal} >
 
             <div className="animation">
-              CURRENT MODE ANIMATION 
+            <Lottie 
+                  options={doubtLottieOptions}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
             </div>
 
             <div className="section-container">
               <h2 className="section">Modes</h2>
               <div className="actions">
+                <button onClick={() => this.closeWindowPortal()} >
+                  Default
+                </button>
                 <button onClick={() => this.closeWindowPortal()} >
                   I don't understand
                 </button>

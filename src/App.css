@@ -87,6 +87,7 @@ button {
   min-height:100px;
   margin:auto;
   margin-top:10px;
+  align-items: center;
 }
 
 .section{
