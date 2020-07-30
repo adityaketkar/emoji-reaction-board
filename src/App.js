@@ -9,32 +9,15 @@ import {
 } from 'recharts';
 import {Label} from 'recharts';
 import Lottie from 'react-lottie';
-import bouncer from './assets/did-not-understand.json';
-import query from './assets/raise-hand-3s.json';
 
-const COLORS = [  '#00C49F','#FF8042', '#FFBB28',,'#0088FE'];
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx, cy, midAngle, innerRadius, outerRadius, percent, name,
-}) => {
-   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+import didntUnderstandState from './assets/did-not-understand.json';
+import doubtState from './assets/raise-hand-3s.json';
+import gotItState from './assets/got-it.json';
+import yesResponse from './assets/yes.json';
+import noResponse from './assets/no.json';
+import defaultState from './assets/default.json';
 
-  return (
-    <div>
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-        {name}<br></br>
-      </text>
-    </div>
-  );
-};
-
-
-
+const COLORS = [  '#00C49F','#FF8042', '#FFBB28','#0088FE'];
 
 function copyStyles(sourceDoc, targetDoc) {
   Array.from(sourceDoc.styleSheets).forEach(styleSheet => {
@@ -110,12 +93,12 @@ class App extends React.PureComponent {
           name: 'Got It!', uv: 12, pv: 12, StudentStatus: 5,
         },
         {
-          name: 'Some Doubts', uv: 12, pv: 12, StudentStatus: 5,
+          name: 'Doubts', uv: 12, pv: 12, StudentStatus: 5,
         },
         {
-          name: 'Bouncer', uv: 12, pv: 12, StudentStatus: 2,
+          name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 2,
         }
-      ]
+      ].reverse()
     };
     
     this.toggleWindowPortal = this.toggleWindowPortal.bind(this);
@@ -160,12 +143,12 @@ class App extends React.PureComponent {
         name: 'Got It!', uv: 12, pv: 12, StudentStatus: seed,
       },
       {
-        name: 'Some Doubts', uv: 12, pv: 12, StudentStatus: 10-seed,
+        name: 'Doubts', uv: 12, pv: 12, StudentStatus: 10-seed,
       },
       {
-        name: 'Bouncer', uv: 12, pv: 12, StudentStatus: 2,
+        name: 'Didn\'t understand', uv: 12, pv: 12, StudentStatus: 2,
       }
-    ];
+    ].reverse();
     this.setState({
       dataBar: newDataBar,
       dataPie: newDataPie
@@ -174,16 +157,41 @@ class App extends React.PureComponent {
   
   render() {
     
-    const bouncerLottieOptions = {
+    //Take Lottie JSON and render it in a form understood by react
+    const didntUnderstandLottieOptions = {
       loop: true,
       autoplay: true,
-      animationData: bouncer
+      animationData: didntUnderstandState
     };
     
-    const queryLottieOptions = {
+    const doubtLottieOptions = {
       loop: true,
       autoplay: true,
-      animationData: query
+      animationData: doubtState
+    };
+
+    const yesLottieOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: yesResponse
+    };
+
+    const noLottieOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: noResponse
+    };
+
+    const gotItOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: gotItState
+    };
+
+    const defaultOption = {
+      loop: true,
+      autoplay: true,
+      animationData: defaultState
     };
   
 
@@ -195,9 +203,7 @@ class App extends React.PureComponent {
             <div className="grid-container">
               <div className="grid-item">
                 <Lottie 
-                  options={bouncerLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={didntUnderstandLottieOptions}//replace this to try different options
                   height={"60%"}
                   width={"60%"}
                 />
@@ -206,9 +212,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -217,9 +221,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={bouncerLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={didntUnderstandLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -228,53 +230,43 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={gotItOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                DOUBT
+                GOT IT
                 <h2> Clint </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={bouncerLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={yesLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                NOT UNDERSTOOD
+                YES
                 <h2> Strange </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={bouncerLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={noLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                NOT UNDERSTOOD
+                NO
                 <h2> Odinson </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                DOUBT
+                DEFAULT
                 <h2> Rogers </h2>
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={bouncerLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={didntUnderstandLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -283,9 +275,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -294,9 +284,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -305,9 +293,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -316,9 +302,7 @@ class App extends React.PureComponent {
               </div>
               <div className="grid-item">
                 <Lottie 
-                  options={queryLottieOptions}
-                  // resizeMode="cover"
-                      // preserveAspectRatio='xMidYMid meet'
+                  options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
@@ -336,12 +320,12 @@ class App extends React.PureComponent {
                   data={this.state.dataBar}
                   barSize={25}
                 >
-                  <XAxis  dataKey="name" scale="point" padding={{ left: 40 , right: 40 }} dy={10}/>
+                  <XAxis fontFamily="sans-serif" style={{fontSize: "small"}} dataKey="name" scale="point" padding={{ left: 40 , right: 40 }} dy={10}/>
                   <YAxis /> 
                   <Tooltip />
                   <Legend />
                   <CartesianGrid strokeDasharray="3 3" />
-                  <Bar style={{alignContent:"center", justifyContent:"center"}} dataKey="StudentStatus" fill="#8884d8" background={{ fill: '#eee' }}  />
+                  <Bar fontFamily="sans-serif" style={{fontSize: "x-small", alignContent:"center", justifyContent:"center"}} dataKey="StudentStatus" fill="#8884d8" background={{ fill: '#eee' }}  />
                 </BarChart>
               </div>
               <div className="class-responses">
@@ -369,7 +353,7 @@ class App extends React.PureComponent {
                 </Pie>
                 <Tooltip/>
               </PieChart>
-              <p>Timer: {this.state.counter}</p>
+              {/* <p>Timer: {this.state.counter}</p> */}
               </div> 
           </div>
         </div>
