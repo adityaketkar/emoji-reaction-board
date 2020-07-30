@@ -376,12 +376,20 @@ class App extends React.PureComponent {
           <MyWindowPortal closeWindowPortal={this.closeWindowPortal} >
 
             <div className="animation">
-              CURRENT MODE ANIMATION 
+            <Lottie 
+                  options={doubtLottieOptions}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
             </div>
 
             <div className="section-container">
               <h2 className="section">Modes</h2>
               <div className="actions">
+                <button onClick={() => this.closeWindowPortal()} >
+                  Default
+                </button>
                 <button onClick={() => this.closeWindowPortal()} >
                   I don't understand
                 </button>
