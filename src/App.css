@@ -40,15 +40,16 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #96c9f3;
+  background-color: rgba(14, 14, 14, 0.8);
   padding: 10px;
   width: 90%;
   margin: auto;
   height: 600px;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(14, 14, 40, 0.5);
+  border: 1px solid rgba(100, 100, 100, 0.75);
+  color: rgba(255, 255, 255, 0.75);
   /* padding: 20px; */
   font-size: 10px;
   text-align: center;
@@ -68,6 +69,7 @@ h1 {
 
 h2{
   margin: 0;
+  color: #fff;
 }
 
 button {
@@ -80,7 +82,7 @@ button {
   cursor: pointer;
 }
 
-.animation { 
+.animation {
   display: block;
   border: 1px solid black;
   width:50%;

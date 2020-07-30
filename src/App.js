@@ -53,11 +53,11 @@ class MyWindowPortal extends React.PureComponent {
 
     // STEP 4: append the container <div> (that has props.children appended to it) to the body of the new window
     this.externalWindow.document.body.appendChild(this.containerEl);
-    
+
     this.externalWindow.document.title = 'A React portal window';
     copyStyles(document, this.externalWindow.document);
-    
-    // update the state in the parent component if the user closes the 
+
+    // update the state in the parent component if the user closes the
     // new window
     this.externalWindow.addEventListener('beforeunload', () => {
       this.props.closeWindowPortal();
@@ -69,7 +69,7 @@ class MyWindowPortal extends React.PureComponent {
     // So we tidy up by just closing the window
     this.externalWindow.close();
   }
-  
+
   render() {
     // STEP 2: append props.children to the container <div> that isn't mounted anywhere yet
     return ReactDOM.createPortal(this.props.children, this.containerEl);
@@ -79,7 +79,7 @@ class MyWindowPortal extends React.PureComponent {
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       counter: 8,
       showWindowPortal: false,
@@ -103,7 +103,7 @@ class App extends React.PureComponent {
         }
       ].reverse()
     };
-    
+
     this.toggleWindowPortal = this.toggleWindowPortal.bind(this);
     this.closeWindowPortal = this.closeWindowPortal.bind(this);
   }
@@ -112,21 +112,21 @@ class App extends React.PureComponent {
     window.addEventListener('beforeunload', () => {
       this.closeWindowPortal();
     });
-    
+
     // window.setInterval(() => {
     //   this.setState(state => ({
     //     counter: state.counter + 1,
     //   }));
     // }, 1000);
   }
-  
+
   toggleWindowPortal() {
     this.setState(state => ({
       ...state,
       showWindowPortal: !state.showWindowPortal,
     }));
   }
-  
+
   closeWindowPortal() {
     this.setState({ showWindowPortal: false })
   }
@@ -140,7 +140,7 @@ class App extends React.PureComponent {
       { name: 'Did\'nt Respond', value: 1 },
     ];
 
-    const newDataBar = 
+    const newDataBar =
     [
       {
         name: 'Got It!', uv: 12, pv: 12, StudentStatus: seed,
@@ -160,16 +160,16 @@ class App extends React.PureComponent {
       dataPie: newDataPie
     });
   }
-  
+
   render() {
-    
+
     //Take Lottie JSON and render it in a form understood by react
     const didntUnderstandLottieOptions = {
       loop: true,
       autoplay: true,
       animationData: didntUnderstandState
     };
-    
+
     const doubtLottieOptions = {
       loop: true,
       autoplay: true,
@@ -199,25 +199,25 @@ class App extends React.PureComponent {
       autoplay: true,
       animationData: defaultState
     };
-  
+
 
     return (
       <div className="master-container">
-        
+
         <div className="dashboard">
           <div className="reaction-board">
             <div className="grid-container">
               <div className="grid-item">
-                <Lottie 
-                  options={didntUnderstandLottieOptions}//replace this to try different options
+                <Lottie
+                  options={defaultOption}//replace this to try different options
                   height={"60%"}
                   width={"60%"}
                 />
-                NOT UNDERSTOOD
+                LISTENING
                 <h2> Peter </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -226,16 +226,16 @@ class App extends React.PureComponent {
                 <h2> Bruce </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
-                  options={didntUnderstandLottieOptions}
+                <Lottie
+                  options={yesLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                NOT UNDERSTOOD
+                YES
                 <h2> Tony </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={gotItOptions}
                   height={"60%"}
                   width={"60%"}
@@ -244,7 +244,7 @@ class App extends React.PureComponent {
                 <h2> Clint </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={yesLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -253,7 +253,7 @@ class App extends React.PureComponent {
                 <h2> Strange </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={noLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -262,34 +262,34 @@ class App extends React.PureComponent {
                 <h2> Odinson </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                DEFAULT
+                LISTENING
                 <h2> Rogers </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={didntUnderstandLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                NOT UNDERSTOOD
+                DIDN'T GET IT
                 <h2> Wanda </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
-                  options={doubtLottieOptions}
+                <Lottie
+                  options={noLottieOptions}
                   height={"60%"}
                   width={"60%"}
                 />
-                DOUBT
+                NO
                 <h2> T'Challa </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -298,7 +298,7 @@ class App extends React.PureComponent {
                 <h2> Natasha </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
+                <Lottie
                   options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -307,15 +307,15 @@ class App extends React.PureComponent {
                 <h2> Rhodey </h2>
               </div>
               <div className="grid-item">
-                <Lottie 
-                  options={doubtLottieOptions}
+                <Lottie
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                DOUBT
+                LISTENING
                 <h2> Scott </h2>
               </div>
-            </div> 
+            </div>
           </div>
           <div className="analytics-board">
               <div className="class-mood">
@@ -327,7 +327,7 @@ class App extends React.PureComponent {
                   barSize={25}
                 >
                   <XAxis fontFamily="sans-serif" style={{fontSize: "small"}} dataKey="name" scale="point" padding={{ left: 40 , right: 40 }} dy={10}/>
-                  <YAxis /> 
+                  <YAxis />
                   <Tooltip />
                   <Legend />
                   <CartesianGrid strokeDasharray="3 3" />
@@ -336,21 +336,21 @@ class App extends React.PureComponent {
               </div>
               <div className="class-responses">
               <PieChart style={{border:"1px solid pink"}} width={400} height={300}>
-                <Pie 
+                <Pie
                 style={{margin:"auto", border:"10px solid black"}}
                 data={this.state.dataPie}
                 dataKey="value"
                 cx={200}
-                cy={150} 
+                cy={150}
                 innerRadius={60}
-                outerRadius={70} 
+                outerRadius={70}
                 fill="#8884d8"
                 paddingAngle={2}
                 >
-                <Label 
+                <Label
                 value={Math.floor((this.state.dataPie[0].value/11)*100) + "%"} position="centerBottom"  className='label-top' fontSize='27px'
                 />
-                <Label 
+                <Label
                 value="Yes responses" position="centerTop" className='label'
                 />
                   {
@@ -360,7 +360,7 @@ class App extends React.PureComponent {
                 <Tooltip/>
               </PieChart>
               {/* <p>Timer: {this.state.counter}</p> */}
-              </div> 
+              </div>
           </div>
         </div>
 
@@ -371,12 +371,12 @@ class App extends React.PureComponent {
         <button onClick={() => this.randomizeData()}>
             Randomize Data
         </button>
-        
+
         {this.state.showWindowPortal && (
           <MyWindowPortal closeWindowPortal={this.closeWindowPortal} >
 
             <div className="animation">
-            <Lottie 
+            <Lottie
                   options={doubtLottieOptions}
                   height={"60%"}
                   width={"60%"}
@@ -403,14 +403,14 @@ class App extends React.PureComponent {
             </div>
 
             <br></br>
-            
+
             <div className="section-container">
               <h2 className="section">Responses</h2>
               <div className="actions">
               <button onClick={() => this.closeWindowPortal()} >
                 Yes
               </button>
-              
+
               <button onClick={() => this.closeWindowPortal()} >
                 No
               </button>
