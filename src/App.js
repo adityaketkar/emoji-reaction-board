@@ -5,43 +5,32 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import {
-  PieChart, Pie, Sector, Cell,
+  PieChart, Pie, Cell,
 } from 'recharts';
-const data = [
-  { name: 'Yes', value: 5 },
-  { name: 'No', value: 6 },
-  { name: 'Did\'nt Respond', value: 1 },
-];
+import {Label} from 'recharts';
+
 const COLORS = [  '#00C49F','#FF8042', '#FFBB28',,'#0088FE'];
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
-  cx, cy, midAngle, innerRadius, outerRadius, percent, index,
+  cx, cy, midAngle, innerRadius, outerRadius, percent, name,
 }) => {
    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
-    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
+    <div>
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+        {name}<br></br>
+      </text>
+    </div>
   );
 };
 
-const dataBar = [
-  {
-    name: ' ', uv: 0, pv: 0, StudentStatus: 0,
-  },
-  {
-    name: 'Got It!', uv: 12, pv: 12, StudentStatus: 5,
-  },
-  {
-    name: 'Some Doubts', uv: 12, pv: 12, StudentStatus: 5,
-  },
-  {
-    name: 'Bouncer', uv: 12, pv: 12, StudentStatus: 2,
-  }
-];
+
 
 
 function copyStyles(sourceDoc, targetDoc) {
@@ -106,8 +95,24 @@ class App extends React.PureComponent {
     super(props);
     
     this.state = {
-      counter: 0,
+      counter: 8,
       showWindowPortal: false,
+      dataPie : [
+        { name: 'Yes', value: 5 },
+        { name: 'No', value: 6 },
+        { name: 'Did\'nt Respond', value: 1 },
+      ],
+      dataBar : [
+        {
+          name: 'Got It!', uv: 12, pv: 12, StudentStatus: 5,
+        },
+        {
+          name: 'Some Doubts', uv: 12, pv: 12, StudentStatus: 5,
+        },
+        {
+          name: 'Bouncer', uv: 12, pv: 12, StudentStatus: 2,
+        }
+      ]
     };
     
     this.toggleWindowPortal = this.toggleWindowPortal.bind(this);
@@ -119,11 +124,11 @@ class App extends React.PureComponent {
       this.closeWindowPortal();
     });
     
-    window.setInterval(() => {
-      this.setState(state => ({
-        counter: state.counter + 1,
-      }));
-    }, 1000);
+    // window.setInterval(() => {
+    //   this.setState(state => ({
+    //     counter: state.counter + 1,
+    //   }));
+    // }, 1000);
   }
   
   toggleWindowPortal() {
@@ -136,11 +141,37 @@ class App extends React.PureComponent {
   closeWindowPortal() {
     this.setState({ showWindowPortal: false })
   }
+
+  randomizeData(){
+    console.log("called randomize");
+    let seed = Math.floor((Math.random() * 12));
+    const newDataPie = [
+      { name: 'Yes', value:  seed},
+      { name: 'No', value: 11-seed },
+      { name: 'Did\'nt Respond', value: 1 },
+    ];
+
+    const newDataBar = 
+    [
+      {
+        name: 'Got It!', uv: 12, pv: 12, StudentStatus: seed,
+      },
+      {
+        name: 'Some Doubts', uv: 12, pv: 12, StudentStatus: 10-seed,
+      },
+      {
+        name: 'Bouncer', uv: 12, pv: 12, StudentStatus: 2,
+      }
+    ];
+    this.setState({
+      dataBar: newDataBar,
+      dataPie: newDataPie
+    });
+  }
   
   render() {
     return (
       <div className="master-container">
-        <h1>Timer: {this.state.counter}</h1>
         
         <div className="dashboard">
           <div className="reaction-board">
@@ -162,45 +193,56 @@ class App extends React.PureComponent {
           <div className="analytics-board">
               <div className="class-mood">
                 <BarChart
-                  style={{margin:"auto" }}
+                  style={{border:"0.2px solid skyblue",alignContent:"center", justifyContent:"center"}}
                   width={400}
                   height={300}
-                  data={dataBar}
-                  barSize={20}
-                  
+                  data={this.state.dataBar}
+                  barSize={25}
                 >
-                  <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                  <XAxis  dataKey="name" scale="point" padding={{ left: 40 , right: 40 }} dy={10}/>
                   <YAxis /> 
                   <Tooltip />
                   <Legend />
                   <CartesianGrid strokeDasharray="3 3" />
-                  <Bar dataKey="StudentStatus" fill="#8884d8" background={{ fill: '#eee' }} />
+                  <Bar style={{alignContent:"center", justifyContent:"center"}} dataKey="StudentStatus" fill="#8884d8" background={{ fill: '#eee' }}  />
                 </BarChart>
               </div>
               <div className="class-responses">
-                <PieChart width={400} height={300} 
-                  style={{margin:"auto", alignItems:"center", justifyContent:"center"}}>
-                  <Pie
-                    data={data}
-                    cx={200}
-                    cy={200}
-                    labelLine={true}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                    label={renderCustomizedLabel}
-                  >
-                    {
-                      data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                    }
-                  </Pie>
-                </PieChart>
+              <PieChart style={{border:"1px solid pink"}} width={400} height={300}>
+                <Pie 
+                style={{margin:"auto", border:"10px solid black"}}
+                data={this.state.dataPie}
+                dataKey="value"
+                cx={200}
+                cy={150} 
+                innerRadius={60}
+                outerRadius={70} 
+                fill="#8884d8"
+                paddingAngle={2}
+                >
+                <Label 
+                value={Math.floor((this.state.dataPie[0].value/11)*100) + "%"} position="centerBottom"  className='label-top' fontSize='27px'
+                />
+                <Label 
+                value="Yes responses" position="centerTop" className='label'
+                />
+                  {
+                    this.state.dataPie.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                  }
+                </Pie>
+                <Tooltip/>
+              </PieChart>
+              <p>Timer: {this.state.counter}</p>
               </div> 
           </div>
         </div>
 
         <button onClick={this.toggleWindowPortal}>
           {this.state.showWindowPortal ? 'Close the' : 'Open a'} Student Portal
+        </button>
+
+        <button onClick={() => this.randomizeData()}>
+            Randomize Data
         </button>
         
         {this.state.showWindowPortal && (

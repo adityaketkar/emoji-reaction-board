@@ -72,6 +72,7 @@ button {
   border: none;
   font-size: inherit;
   margin: 10px;
+  cursor: pointer;
 }
 
 .animation { 
@@ -109,6 +110,7 @@ button {
 
 .master-container{
   width: auto;
+  margin-top: 20px;
   /* border: black 1px solid; */
 }
 
@@ -128,7 +130,6 @@ button {
 .class-mood{
   /* border: green 2px solid; */
   margin: 5px;
-  justify-items: center;
 }
 
 .class-responses{
