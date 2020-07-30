@@ -8,6 +8,9 @@ import {
   PieChart, Pie, Cell,
 } from 'recharts';
 import {Label} from 'recharts';
+import Lottie from 'react-lottie';
+import bouncer from './assets/did-not-understand.json';
+import query from './assets/raise-hand-3s.json';
 
 const COLORS = [  '#00C49F','#FF8042', '#FFBB28',,'#0088FE'];
 const RADIAN = Math.PI / 180;
@@ -170,24 +173,146 @@ class App extends React.PureComponent {
   }
   
   render() {
+    
+    const bouncerLottieOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: bouncer
+    };
+    
+    const queryLottieOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: query
+    };
+  
+
     return (
       <div className="master-container">
         
         <div className="dashboard">
           <div className="reaction-board">
             <div className="grid-container">
-              <div className="grid-item">1</div>
-              <div className="grid-item">2</div>
-              <div className="grid-item">3</div>
-              <div className="grid-item">4</div>
-              <div className="grid-item">5</div>
-              <div className="grid-item">6</div>
-              <div className="grid-item">7</div>
-              <div className="grid-item">8</div>
-              <div className="grid-item">9</div>
-              <div className="grid-item">10</div>
-              <div className="grid-item">11</div>
-              <div className="grid-item">12</div>
+              <div className="grid-item">
+                <Lottie 
+                  options={bouncerLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                NOT UNDERSTOOD
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={bouncerLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                NOT UNDERSTOOD
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={bouncerLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                NOT UNDERSTOOD
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={bouncerLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                NOT UNDERSTOOD
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={bouncerLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                NOT UNDERSTOOD
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
+              <div className="grid-item">
+                <Lottie 
+                  options={queryLottieOptions}
+                  // resizeMode="cover"
+                      // preserveAspectRatio='xMidYMid meet'
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DOUBT
+              </div>
             </div> 
           </div>
           <div className="analytics-board">
