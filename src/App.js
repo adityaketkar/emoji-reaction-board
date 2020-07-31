@@ -207,6 +207,8 @@ class App extends React.PureComponent {
         <div className="dashboard">
           <div className="reaction-board">
             <div className="grid-container">
+
+
               <div className="grid-item">
                 <Lottie
                   options={defaultOption}//replace this to try different options
@@ -216,51 +218,63 @@ class App extends React.PureComponent {
                 LISTENING
                 <h2> Peter </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
-                  options={doubtLottieOptions}
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                DOUBT
+                LISTENING
                 <h2> Bruce </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
-                  options={yesLottieOptions}
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                YES
+                LISTENING
                 <h2> Tony </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
-                  options={gotItOptions}
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                GOT IT
+                LISTENING
                 <h2> Clint </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
-                  options={yesLottieOptions}
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                YES
+                LISTENING
                 <h2> Strange </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
-                  options={noLottieOptions}
+                  options={defaultOption}
                   height={"60%"}
                   width={"60%"}
                 />
-                NO
+                LISTENING
                 <h2> Odinson </h2>
               </div>
+
+
               <div className="grid-item">
                 <Lottie
                   options={defaultOption}
@@ -270,42 +284,8 @@ class App extends React.PureComponent {
                 LISTENING
                 <h2> Rogers </h2>
               </div>
-              <div className="grid-item">
-                <Lottie
-                  options={didntUnderstandLottieOptions}
-                  height={"60%"}
-                  width={"60%"}
-                />
-                DIDN'T GET IT
-                <h2> Wanda </h2>
-              </div>
-              <div className="grid-item">
-                <Lottie
-                  options={noLottieOptions}
-                  height={"60%"}
-                  width={"60%"}
-                />
-                NO
-                <h2> T'Challa </h2>
-              </div>
-              <div className="grid-item">
-                <Lottie
-                  options={doubtLottieOptions}
-                  height={"60%"}
-                  width={"60%"}
-                />
-                DOUBT
-                <h2> Natasha </h2>
-              </div>
-              <div className="grid-item">
-                <Lottie
-                  options={doubtLottieOptions}
-                  height={"60%"}
-                  width={"60%"}
-                />
-                DOUBT
-                <h2> Rhodey </h2>
-              </div>
+
+
               <div className="grid-item">
                 <Lottie
                   options={defaultOption}
@@ -313,8 +293,54 @@ class App extends React.PureComponent {
                   width={"60%"}
                 />
                 LISTENING
+                <h2> Wanda </h2>
+              </div>
+
+
+              <div className="grid-item">
+                <Lottie
+                  options={defaultOption}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                LISTENING
+                <h2> T'Challa </h2>
+              </div>
+
+
+              <div className="grid-item">
+                <Lottie
+                  options={defaultOption}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                LISTENING
+                <h2> Natasha </h2>
+              </div>
+
+
+              <div className="grid-item">
+                <Lottie
+                  options={defaultOption}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                LISTENING
+                <h2> Rhodey </h2>
+              </div>
+
+
+              <div className="grid-item">
+                <Lottie
+                  options={didntUnderstandLottieOptions}
+                  height={"60%"}
+                  width={"60%"}
+                />
+                DON'T GET IT
                 <h2> Scott </h2>
               </div>
+
+
             </div>
           </div>
           <div className="analytics-board">
