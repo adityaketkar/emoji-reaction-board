@@ -19,7 +19,10 @@
   </p>
 </p>
 
+## Collaborator Credits
+[Gyan Lakhwani](www.gyanl.com) : Idea, Animations and Demo Video
 
+[Aditya Ketkar](www.adityaketkar.me) : Dashboard
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -65,7 +68,10 @@ Audience can register their responce and state frequently, without any speed dro
 ### Speaker Dashboard
 <kbd><img src="https://i.imgur.com/pBMfz9S.png" /></kbd>
 
-### Installation
+
+<br>
+
+## Installation
 
 1. Clone the repo
 ```sh
@@ -75,7 +81,7 @@ git clone https://github.com/adityaketkar/emoji-reaction-board.git
 ```sh
 cd emoji-reaction-board
 yarn install
-yarn develop
+yarn start
 ```
 
 <!-- CONTRIBUTING -->
@@ -104,6 +110,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Gyan Lakhwani - [@gyanlakhwani](https://linkedin.com/in/gyanlakhwani) - gyanl.com
+
 Aditya Ketkar - [@adityaketkar](https://linkedin.com/in/adityaketkar) - adityaketkar.me
 
 
@@ -125,12 +132,3 @@ Aditya Ketkar - [@adityaketkar](https://linkedin.com/in/adityaketkar) - adityake
 [license-shield]: https://img.shields.io/github/license/adityaketkar/circle-packing-personal-homepage
 [license-url]: https://github.com/adityaketkar/circle-packing-personal-homepage/blob/master/LICENSE
 
-
-In the project directory, you can run:
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
