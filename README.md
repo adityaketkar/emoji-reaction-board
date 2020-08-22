@@ -1,9 +1,132 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![MIT License][license-shield]][license-url]
 
-## Available Scripts
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://tinyurl.com/emoji-reaction-board-demo">
+    <img src="https://i.imgur.com/dGt7ZKi.png" alt="Logo" width="60%" height="40%">
+  </a>
+
+  <p align="center">
+    A Non-Network-Heavy & Fun Alternative to Audience Reactions in Virtual Meetings
+    <br />
+    <br />
+    <a href="https://tinyurl.com/emoji-reaction-board-demo">View Demo</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+* [Installation](#installation)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Video calls are great, but most time majority of people are **silent observers** 🙊.
+
+Too many people talking seems chaotic, and too many incoming video streams give your **internet connection a hard time**. 
+
+For the speaker, this feels like **talking to a wall** and makes it hard to figure out the audience response. Even if someone wants to respond, there's a **awkward silence** before they unmute and start to talk. Which leaves us tinkering on the idea 💡 : <br>
+
+**How can we make it easier for people to quickly and frequently pitch in without turning on voice / video ?**
+
+This hackathon projects picks on the idea of making a dashboard for Audience and Speaker with preset states and responses. 
+
+Audience can register their responce and state frequently, without any speed drops and Speaker can get continous feedback from audience and ask interactive questions. 
+
+### Built With
+* [React](https://reactjs.org/)
+* [Lottie](https://airbnb.io/lottie)
+
+
+<!-- USAGE EXAMPLES -->
+### Motivation 
+<kbd><img src="https://i.imgur.com/mJ50Nqk.png" /></kbd>
+
+
+### [Proposed Solution] Dynamic Response Board
+<kbd><img src="images/EmojiGif.gif" /></kbd>
+
+
+### Speaker Dashboard
+<kbd><img src="https://i.imgur.com/pBMfz9S.png" /></kbd>
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/adityaketkar/emoji-reaction-board.git
+```
+3. Launch dev build using React
+```sh
+cd emoji-reaction-board
+yarn install
+yarn develop
+```
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what makes the open source community an amazing platform to learn, inspire, and create. Any contributions you can make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+Of course, no software is perfect. Let me know your suggestions and feature requests here. You may also suggest changes by forking this repo and creating a pull request or opening an issue :)
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Gyan Lakhwani - [@gyanlakhwani](https://linkedin.com/in/gyanlakhwani) - gyanl.com
+Aditya Ketkar - [@adityaketkar](https://linkedin.com/in/adityaketkar) - adityaketkar.me
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Best-README](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+* [Open Source Licence](https://choosealicense.com/)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/adityaketkar/circle-packing-personal-homepage.svg?style=flat-square
+[contributors-url]: https://github.com/adityaketkar/circle-packing-personal-homepage/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/adityaketkar/emoji-reaction-board
+[forks-url]: https://github.com/adityaketkar/emoji-reaction-board
+[stars-shield]: https://img.shields.io/github/stars/adityaketkar/emoji-reaction-board.svg?style=flat-square
+[stars-url]: https://github.com/adityaketkar/emoji-reaction-board
+[license-shield]: https://img.shields.io/github/license/adityaketkar/circle-packing-personal-homepage
+[license-url]: https://github.com/adityaketkar/circle-packing-personal-homepage/blob/master/LICENSE
+
 
 In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.<br />
@@ -11,58 +134,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
