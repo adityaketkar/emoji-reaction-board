@@ -10,7 +10,7 @@
     "react-dom": "^16.13.1",
     "react-lottie": "^1.2.3",
     "react-scripts": "3.4.1",
-    "recharts": "^1.8.5"
+    "recharts": "^2.1.14"
   },
   "scripts": {
     "start": "react-scripts start",
